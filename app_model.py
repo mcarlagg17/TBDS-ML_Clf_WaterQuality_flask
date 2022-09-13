@@ -1,12 +1,9 @@
-import csv
-
-from flask import Flask, flash, jsonify, request, render_template, redirect, url_for
+from flask import Flask, flash,  request, render_template, redirect, url_for
 from werkzeug.utils import secure_filename
 
 import os
 import pickle
 import pandas as pd
-from sklearn.model_selection import train_test_split
 import numpy as np
 import pygit as git
 
@@ -64,33 +61,15 @@ def predict():
         tamano = len(datos)
         model = pickle.load(open('model_selected.pkl', 'rb'))
         prediction = model.predict(datos)
-
-        #return render_template("results.html", prediction)
         
-        if tamano==1:
-            return render_template('predict.html',resultado=prediction[0])
-        else: 
+        if tamano>1:
             tabla = pd.DataFrame(datos,columns=datos.columns)
             tabla['prediction'] = prediction
             resultado = ['safe' if p==1 else 'not safe' for p in prediction ]
             #tabla_html=tabla.to_html()
             return render_template('predict_table.html',tabla=resultado)
+        elif tamano==1:
+            return render_template('predict.html',resultado=prediction[0])
 
-
-#@app.route('/api/v1/retrain', methods=['PUT'])
-#def retrain():
-#    data = pd.read_csv('data/Advertising.csv', index_col=0)
-#
-#    X_train, X_test, y_train, y_test = train_test_split(data.drop(columns=['sales']),
-#                                                    data['sales'],
-#                                                    test_size = 0.20,
-#                                                    random_state=42)
-#
-#    model = Lasso(alpha=6000)
-#    model.fit(X_train, y_train)
-#
-#    pickle.dump(model, open('ad_model.pkl', 'wb'))
-#
-#    return "Model retrained. New evaluation metric RMSE: " + str(np.sqrt(mean_squared_error(y_test, model.predict(X_test))))
 if __name__ == "__main__":
     app.run()
