@@ -5,7 +5,7 @@ import os
 import pickle
 import pandas as pd
 import numpy as np
-import pygit as git
+import git
 
 os.chdir(os.path.dirname(__file__))
 
