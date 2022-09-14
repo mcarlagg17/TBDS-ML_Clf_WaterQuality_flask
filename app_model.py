@@ -22,14 +22,14 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Route for the GitHub webhook
 
-@app.route('/git_update', methods=['POST'])
-def git_update():
-    repo = git.Repo('./TBDS_ML_Clf_WaterQuality_flask')
-    origin = repo.remotes.origin
-    repo.create_head('main',
-                     origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
-    origin.pull()
-    return '', 200
+#@app.route('/git_update', methods=['POST'])
+#def git_update():
+#    repo = git.Repo('./TBDS_ML_Clf_WaterQuality_flask')
+#    origin = repo.remotes.origin
+#    repo.create_head('main',
+#                     origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+#    origin.pull()
+#    return '', 200
 
 
 @app.route("/", methods=['GET'])
