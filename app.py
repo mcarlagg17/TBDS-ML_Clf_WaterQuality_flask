@@ -1,5 +1,5 @@
 from flask import Flask
-import pygit as git
+import git
 
 app = Flask(__name__)
 
