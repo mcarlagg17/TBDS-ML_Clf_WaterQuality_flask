@@ -70,6 +70,3 @@ def predict():
             return render_template('predict_table.html',tabla=tabla.to_html())
         elif tamano==1:
             return render_template('predict.html',resultado=prediction[0])
-
-if __name__ == "__main__":
-    app.run()
