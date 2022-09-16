@@ -6,6 +6,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import git
+from sklearn.ensemble import GradientBoostingClassifier
 
 os.chdir(os.path.dirname(__file__))
 
