@@ -1,6 +1,6 @@
-python==3.9.12
+#python==3.9 # crear entorno con python 3.9
 Flask==2.2.2
 pandas==1.4.4
-sklearn
-python-git==2018.2.1
-werkzeug
+scikit-learn==1.1.2
+python-git==2018.2.1 # solo para Mac
+

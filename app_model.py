@@ -5,7 +5,7 @@ import os
 import pickle
 import pandas as pd
 import numpy as np
-import git
+import pygit as git
 
 os.chdir(os.path.dirname(__file__))
 
@@ -34,7 +34,7 @@ def git_update():
 
 @app.route("/", methods=['GET'])
 def home():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 
 def allowed_file(filename):
@@ -67,7 +67,7 @@ def predict():
             tabla['prediction'] = prediction
             resultado = ['safe' if p==1 else 'not safe' for p in prediction ]
             #tabla_html=tabla.to_html()
-            return render_template('predict_table.html',tabla=resultado)
+            return render_template('predict_table.html',tabla=tabla.to_html())
         elif tamano==1:
             return render_template('predict.html',resultado=prediction[0])
 
