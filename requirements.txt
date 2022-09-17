@@ -2,6 +2,6 @@
 Flask==2.2.2
 pandas==1.4.4
 scikit-learn==1.1.1
-#gunicorn # en heroku
+gunicorn # en heroku
 #python-git==2018.2.1 # solo para Mac
 
