@@ -9,7 +9,7 @@
     <title>Prediction - Water Quality Classification</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -34,11 +34,11 @@
 
     <!-- Custom styles for this template -->
     <link href="static/cover.css" rel="stylesheet">
-    <!--link href="dashboard.css" rel="stylesheet"-->
+    
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex w-200 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
         <div>
             <h3 class="float-md-start mb-0">Data Science Project</h3>
@@ -50,10 +50,14 @@
         </div>
     </header>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-        <h2>Predictions</h2>
-        <div> {{tabla}} </div>
+    <main class="col-md-start ms-sm-10 col-lg-14 px-md-3">
+        
+        <div class="table-responsive table-striped table-dark table-bordered" style="width: 100%;height: 600px;">
+            {% for table in tables %}
+                {{ table|safe }}
+            {% endfor %}
+            
+        </div>
         <p class="lead"><br></p>
         <p class="lead">
             <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-white">New prediction</a>
@@ -62,7 +66,7 @@
     </main>
 
     <footer class="mt-auto text-white-50">
-        <p>Project created by Maria Carla González. <a href="https://github.com/mcarlagg17">My Github</a></p>
+        <p>Project created by Maria Carla González. <a href="https://github.com/mcarlagg17/TBDS_ML_Clf_WaterQuality_flask"><i class="fa fa-github"></i> </a></p>
     </footer>
 </div>
   

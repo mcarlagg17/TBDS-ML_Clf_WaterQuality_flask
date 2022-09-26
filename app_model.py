@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 UPLOAD_FOLDER = 'uploads'
-ALLOWED_EXTENSIONS = {'csv','txt'}
+ALLOWED_EXTENSIONS = {'csv','txt','xls'}
 
 # In a real app, the secret key would be in a separate config file and not visible in the source control
 app.config['SECRET_KEY'] = '\xf7\xc4\xd3:\xdfH\x84h\xcd\xa9\xa5t\xbe\x13\x18L\x0e&\xf8\xc8}\xf9\xe9s'
@@ -45,18 +45,18 @@ def allowed_file(filename):
 @app.route("/predict", methods=['POST'])
 def predict():
     
-    if 'predictionfile' not in request.files:
+    if 'chooseFile' not in request.files:
         flash('No file part')
         return redirect(url_for(home))
-    file = request.files['predictionfile']
+    file = request.files['chooseFile']
+
     # If the user does not select a file, the browser submits an
     # empty file without a filename.
     if file.filename == '':
         flash('No selected file')
         return redirect(url_for(home))
+
     if file and allowed_file(file.filename):
-        #filename = secure_filename(file.filename)
-        #file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         datos = pd.read_csv(file)
         tamano = len(datos)
         model = pickle.load(open('model_selected.pkl', 'rb'))
@@ -64,12 +64,10 @@ def predict():
         
         if tamano>1:
             tabla = pd.DataFrame(datos,columns=datos.columns)
-            tabla['prediction'] = prediction
             resultado = ['safe' if p==1 else 'not safe' for p in prediction ]
-            #tabla_html=tabla.to_html()
-            return render_template('predict_table.html',tabla=tabla.to_html())
+            tabla.insert(0,'prediction',resultado)
+            return render_template('predict_table.html',  tables=[tabla.to_html(classes='data', header="true")])
+            
         elif tamano==1:
             return render_template('predict.html',resultado=prediction[0])
             
-if __name__ == "__main__":
-  app.run()
