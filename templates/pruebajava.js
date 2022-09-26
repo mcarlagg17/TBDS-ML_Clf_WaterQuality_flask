@@ -1,11 +1,11 @@
-$('chooseFile').bind('change', function () {
-    var filename = $("chooseFile").val();
-    if (/^\s*$/.test(filename)) {
-      $(".file-upload").removeClass('active');
-      $("noFile").text("holi"); 
-    }
-    else {
-      $(".file-upload").addClass('active');
-      $("noFile").text(filename.replace("C:\\fakepath\\", "")); 
-    }
-  });
+$('#chooseFile').bind('change', function () {
+  var filename = $("#chooseFile").val();
+  if (/^\s*$/.test(filename)) {
+    $(".file-upload").removeClass('active');
+    $("#noFile").text("Selected"); 
+  }
+  else {
+    $(".file-upload").addClass('active');
+    $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
+  }
+});
