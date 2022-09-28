@@ -25,6 +25,7 @@ body {
 
 .cover-container {
   max-width: 42em;
+  background-image: url('../img/fondofoto.png');
 }
 
 
