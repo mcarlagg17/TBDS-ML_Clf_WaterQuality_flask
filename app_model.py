@@ -59,8 +59,10 @@ def predict():
     if file and allowed_file(file.filename):
         datos = pd.read_csv(file)
         tamano = len(datos)
+        scaler = pickle.load(open('scaler.pkl', 'rb'))
         model = pickle.load(open('model_selected.pkl', 'rb'))
-        prediction = model.predict(datos)
+        datos_scaled = scaler.transform(datos)
+        prediction = model.predict(datos_scaled)
         
         if tamano>1:
             tabla = pd.DataFrame(datos,columns=datos.columns)
