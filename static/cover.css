@@ -25,6 +25,7 @@ body {
   background-image: url(./img/fondofoto.png);
   background-repeat: no-repeat;
   background-size: contain;
+  margin: 0;
 }
 
 .cover-container {
