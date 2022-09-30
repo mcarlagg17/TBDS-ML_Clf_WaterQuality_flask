@@ -40,6 +40,8 @@ body {
   
 .w-h{
   max-width: 42em;
+  display: flex;
+  justify-content: center;
 }
 
 /*
