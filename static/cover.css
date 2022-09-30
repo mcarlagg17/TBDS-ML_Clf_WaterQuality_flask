@@ -37,6 +37,11 @@ body {
   max-width: 42em;
   margin:0 auto;
 }
+  
+.w-h{
+  max-width: 42em;
+  margin: 3px; 
+}
 
 /*
  * Header
