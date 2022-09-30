@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Home - Water Quality Classification</title>
+    <title>Params - Water Quality Classification</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,29 +46,25 @@
         <div>
             <h3 class="float-md-start mb-0">Data Science Project</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link active" aria-current="page" href="/params">Params</a>
                 <a class="nav-link" href="#">Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="px-3">
-        <h1>Water Quality.</h1>
-        <p class="lead">Prediction of water quality according to the indicated parameters.</p>
-        <p class="lead">
-            <a href="/params" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Parametes to add</a>
-        </p>
+        <h1>Parameters.</h1>
         <form action="predict" method="POST" enctype="multipart/form-data">
                
-            <div class="file-upload text-center width-upload">
-                <div class="file-select">
-                    <div class="file-select-button" id="fileName">Choose File</div>
-                    <div class="file-select-name" id="noFile">No file chosen...</div> 
-                    <input type="file" name="chooseFile" id="chooseFile">
-                </div>
+            <div>
+                <img src="../static/img/params.png" width="960" height="640" />
             </div>
             <p class="lead"><br></p>
-            <button type="submit" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Run prediction</button>
+
+            <p class="lead">
+                <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Make prediction</a>
+            </p>
         </form>
 
     </main>

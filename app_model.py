@@ -36,6 +36,9 @@ def git_update():
 def home():
     return render_template('index.html')
 
+@app.route("/params", methods=['GET'])
+def parameters():
+    return render_template('params.html')
 
 def allowed_file(filename):
     return '.' in filename and \
