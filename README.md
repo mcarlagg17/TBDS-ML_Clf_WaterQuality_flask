@@ -1,10 +1,11 @@
 # Flask Calidad del Agua
 
-Proyecto de **Machine Learning** cuyo objetivo es implementar el mejor modelo obtenido en [repositorio Github](https://github.com/mcarlagg17/TBDS_ML_Clf_WaterQuality_flask) la creación y comparación de *modelos de clasificación* para predecir si el agua es o no es segura. Además, se implementa, el modelo de mayor *precisión*, en una aplicación flask desplegada en heroku ([repositorio flask Github](https://github.com/mcarlagg17/TBDS_ML_Clf_WaterQuality_flask))
+Implementación del mejor modelo de **Machine Learning** ([repositorio de proyecto ML](https://github.com/mcarlagg17/TBDS_ML_Clf_WaterQuality)). El objetivo es **clasificar si el agua es o no es segura**. 
+Se realiza el despliegue en heroku, utilizando *flask*.
 
 ![img](https://okdiario.com/img/2018/01/12/agua-cruda.jpg)
 
-Para clasificar se distingue entre ***segura y no segura*** a partir de los parámetros que se muestran a continuación:  
+Se distingue entre ***segura y no segura*** a partir de los parámetros que se muestran a continuación:  
 
 
 
@@ -32,22 +33,21 @@ Para clasificar se distingue entre ***segura y no segura*** a partir de los par�
 | uranium     | dangerous if greater than 0.3            |\n
 | is_safe     | class attribute {0 - not safe, 1 - safe} |
 
-La tabla presenta el **dataset** utilizado para el estudio y creación de modelos. 
+*La tabla presenta las **variables a introducir mediante un csv** para realizar la predicción con el modelo entrenado.*
 
-## **Estructura** del proyecto 🗿 
+Pudiendo comprobar un dataset con u
+
+## **Estructura** del proyecto flask 🗿 
 - ***README.md***: *archivo actual, información inicial.*
-- ***proyect_resume.ipynb***: *notebook explicativo de la línea seguida en los distintos notebooks y los métodos empleados.*
-- ***src***:
-    - Notebooks donde se desarrolla el proyecto.
-    - **data**: *lugar en el que se alamcenan los dataset, tanto modificados como original.*
-    - **img**: *almacenan imagenes y figuras.*
-    - **model**: 
-        + *archivos pickle con los modelos entrenados*
-        + model_metrics: *archivos csv con las métricas obtenidas*
-    - **utils**: 
-        + libreries.py: *librerias empleadas en el proyecto.*
-        + utils.py: *funciones creadas para limpieza, análisis, graficar y trabajar con archivos.*
-        + utilsML.py: *funciones creadas para Machine Learning.*
+- ***app_model.py***: *archivo python que contiene las acciones de la aplicación.*
+- ***static***:
+    - cover.css: indicaciones generales de gráficos.
+- ***templates***: archivos con las distintas pantallas.
+- *data/example*: *archivos csv de ejemplo.*
+- *img*: *almacenan imagenes y figuras.*
+- **model_selected.pkl**: modelo seleccionado.
+- **scaler.pkl**: escalador entrenado.
+- *requirements.txt*: archivo con los requerimientos de instalación mínima.
 
 
 ## Preparación 🔧
@@ -68,10 +68,6 @@ Una vez creado el entorno, colocándonos en la carpeta *utils* dentro de *src* i
 ```
 >> pip install -r requirements.txt
 ```
-
-## *Consejos de uso* 🤓
-
-*Leer el archivo <a href='proyect_resume.ipynb'>proyect_resume.ipynb</a> para tener una idea de la línea seguida y los resultados obtenidos.*
 
 ## Autora 👩🏽‍💻
 
@@ -98,4 +94,4 @@ Una vez creado el entorno, colocándonos en la carpeta *utils* dentro de *src* i
 
 ---
 
-![img](./src/img/logo.jpg)
+![img](./static/img/logo.jpg)
