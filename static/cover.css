@@ -35,7 +35,7 @@ body {
 
 .width-upload {
   max-width: 42em;
-  text-align:center;
+  margin:0 auto;
 }
 
 /*
