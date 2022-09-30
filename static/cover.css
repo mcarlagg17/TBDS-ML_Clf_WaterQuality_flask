@@ -26,6 +26,8 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   margin: 0;
+  width:100%;
+  height: auto;
 }
 
 .cover-container {
