@@ -35,7 +35,9 @@ Se distingue entre ***segura y no segura*** a partir de los parámetros que se m
 
 *La tabla presenta las **variables a introducir mediante un csv** para realizar la predicción con el modelo entrenado.*
 
-Pudiendo comprobar un dataset con u
+Se introduce un csv:
+- 1 fila: respuesta directa.
+- 2 o más filas: respuesta en forma de tabla.
 
 ## **Estructura** del proyecto flask 🗿 
 - ***README.md***: *archivo actual, información inicial.*
@@ -63,7 +65,7 @@ _Crear un entrono virtual y añadir las librerías mínimas para ejecutar este p
 ```
 * Instalar librerías:
 
-Una vez creado el entorno, colocándonos en la carpeta *utils* dentro de *src* instalamos las librerías mínimas necesarias.
+Una vez creado el entorno, instalamos las librerías mínimas necesarias.
 
 ```
 >> pip install -r requirements.txt
@@ -72,6 +74,12 @@ Una vez creado el entorno, colocándonos en la carpeta *utils* dentro de *src* i
 ## Autora 👩🏽‍💻
 
 * **María Carla González González** - [mcarlagg17](https://github.com/mcarlagg17)
+
+### *Información de contacto:*
+___
+* Email: ***carla.glezz@gmail.com***
+* Linkedin: ***https://www.linkedin.com/in/mariacarlagonzalezgonzalez/***
+--- 
 
 ## Tutores 👨‍🏫
 
