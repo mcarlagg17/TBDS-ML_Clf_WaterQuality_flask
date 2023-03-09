@@ -1,12 +1,11 @@
 # Flask Calidad del Agua
 
 Implementación del mejor modelo de **Machine Learning** ([repositorio de proyecto ML](https://github.com/mcarlagg17/TBDS_ML_Clf_WaterQuality)). El objetivo es **clasificar si el agua es o no es segura**. 
-Se realiza el despliegue en heroku, utilizando *flask*.
+Se realiza el despliegue en fly.io, utilizando *flask* ([waterqualityapp](https://waterqualityflaskapp.fly.dev)).
 
 ![img](https://okdiario.com/img/2018/01/12/agua-cruda.jpg)
 
 Se distingue entre ***segura y no segura*** a partir de los parámetros que se muestran a continuación:  
-
 
 
 | Variable    | description                              |
