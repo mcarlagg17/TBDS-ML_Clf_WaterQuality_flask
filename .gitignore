@@ -156,4 +156,4 @@ cython_debug/
 
 # Ficheros ocultos sistema operativo
 .DS_Store
-.log
+pygit_logger.log
